@@ -9,6 +9,7 @@ export default function NavBar() {
         accessoires, mon panier, mon compte.
       </p>
       <Link to="/Home">Home page</Link>
+      <Link to="/clothes">Clothes</Link>
     </div>
   );
 }
