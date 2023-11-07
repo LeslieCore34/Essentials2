@@ -4,8 +4,11 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App";
-import Article from "./pages/Article";
+
 import Home from "./pages/Home";
+
+import Cart from "./pages/Cart";
+import Clothes from "./pages/Clothes";
 
 const router = createBrowserRouter([
   {
@@ -17,8 +20,12 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/article",
-    element: <Article />,
+    path: "/clothes",
+    element: <Clothes />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
   },
 ]);
 

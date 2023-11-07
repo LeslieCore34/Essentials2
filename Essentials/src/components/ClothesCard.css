@@ -1,0 +1,8 @@
+.image-clothes-card {
+  display: flex;
+  width: 20%;
+}
+
+.clothes-image {
+  width: 50%;
+}
