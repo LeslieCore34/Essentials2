@@ -1,8 +1,8 @@
-.image-container {
+.image-clothes-card {
   display: flex;
   width: 20%;
 }
 
-.clothes-images {
+.clothes-image {
   width: 50%;
 }
