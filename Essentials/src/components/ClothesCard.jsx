@@ -1,5 +1,6 @@
 import "./ClothesCard.css";
 import { clothesList } from "../data/ClothesData";
+import AddDelButton from "./AddDelButton";
 
 export default function ClothesCard() {
   return (
@@ -17,6 +18,7 @@ export default function ClothesCard() {
             </div>
             <p>Quantité en stock :{item.quantity}</p>
             <p>Prix: {item.price} euros</p>
+            <AddDelButton />
           </div>
         ))}
       </div>
