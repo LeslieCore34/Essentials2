@@ -4,9 +4,14 @@
   box-sizing: border-box;
 }
 
+.navigation-bar-container {
+  background-color: beige;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 20px;
+}
 .link {
   list-style: none;
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
+  color: black;
 }

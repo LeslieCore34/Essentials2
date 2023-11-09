@@ -31,5 +31,3 @@ ContextProvider.propTypes = {
 };
 
 export const useTheContext = () => useContext(Context);
-
-// fonction "provider" avec paramétre children qui va utiliser un useEffect dans lequel on appel l'api
