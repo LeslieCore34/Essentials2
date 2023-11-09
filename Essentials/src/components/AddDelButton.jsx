@@ -1,11 +1,11 @@
-import { useState } from "react";
-import UserCart from "../context/context";
+import { useTheContext } from "../context/context";
 
 export default function ButtonQuantity() {
-  const [quantities, setQuantities] = useState(0);
+  const { quantities, setQuantities } = useTheContext();
 
   const quantityPlus = () => {
     setQuantities(quantities + 1);
+    console.log(quantities);
   };
 
   const quantityMinus = () => {
@@ -17,14 +17,15 @@ export default function ButtonQuantity() {
   return (
     <div>
       <button onClick={quantityPlus}>Ajouter</button>
-      <UserCart.Provider value={{ quantities: quantities }}>
-        <input
-          type="text"
-          value={quantities}
-          name="quantity"
-          id="quantity-added-button"
-        />
-      </UserCart.Provider>
+
+      <input
+        type="text"
+        value={quantities}
+        name="quantity"
+        id="quantity-added-button"
+        onChange={(event) => setQuantities(event.target.value)}
+      />
+
       <button onClick={quantityMinus}>Supprimer</button>
     </div>
   );

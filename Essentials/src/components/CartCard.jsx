@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import UserCart from "../context/context";
+import { useTheContext } from "../context/context";
 
 export default function CartCard() {
-  const cartUpdated = useContext(UserCart);
+  const { quantities } = useTheContext();
   return (
     <div>
       <h2>My cart</h2>
       <ul>
-        <li>{cartUpdated}</li>
+        <li>{quantities}</li>
         <h2>test</h2>
       </ul>
     </div>
