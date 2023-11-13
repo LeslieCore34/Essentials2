@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container-lip {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.container2-lip {
+  height: 50%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-lip {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5em;
+}
+.image-lip {
+  width: 50%;
+  height: 50%;
+}
