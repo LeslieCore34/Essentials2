@@ -4,7 +4,7 @@ import "../styles/LipStick.scss";
 import axios from "axios";
 
 export default function LipStick() {
-  const { api } = useTheContext();
+  const { apiLip } = useTheContext();
 
   // Trier pour seulement lipstick > refaire le fecth useContext et en faire un pour chaque type de produit +
   // afficher le component lipstick avec 3 articles seulement
@@ -12,7 +12,7 @@ export default function LipStick() {
 
   return (
     <div className="container-lip">
-      {api.slice(1, 16).map((product) => (
+      {apiLip.slice(1, 4).map((product) => (
         <div className="container2-lip" key={product.id}>
           <h1 className="title-lip">{product.name}</h1>
           <p className="description-lip">{product.description}</p>
