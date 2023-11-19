@@ -6,15 +6,13 @@ const Context = createContext();
 
 export function ContextProvider({ children }) {
   const [quantities, setQuantities] = useState(0);
-  const [apilip, setApiLip] = useState([]);
+  const [api, setApi] = useState([]);
 
   useEffect(() => {
     axios
-      .get(
-        `https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lipstick`
-      )
+      .get(`http://makeup-api.herokuapp.com/api/v1/products.json`)
       .then(({ data }) => {
-        setApiLip(data);
+        setApi(data);
       })
       .catch((error) => {
         console.error("Erreur lors de la récupération des produits:", error);
@@ -22,7 +20,7 @@ export function ContextProvider({ children }) {
   }, []);
 
   return (
-    <Context.Provider value={{ quantities, setQuantities, apilip, setApiLip }}>
+    <Context.Provider value={{ quantities, setQuantities, api, setApi }}>
       {children}
     </Context.Provider>
   );

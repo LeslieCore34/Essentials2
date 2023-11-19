@@ -1,4 +1,4 @@
-import LipStick from "../components/Lipstick";
+import LipStick from "../components/LipStick";
 
 export default function MakeUp() {
   return (

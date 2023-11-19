@@ -1,0 +1,8 @@
+.clothes-container {
+  display: grid;
+  grid-template-columns: 400px 400px;
+}
+
+.clothes-image {
+  width: 50%;
+}

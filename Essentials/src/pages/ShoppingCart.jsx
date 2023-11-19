@@ -1,9 +1,9 @@
-import CartCard from "../components/CartCard";
+import WishList from "../components/WishList";
 
 export default function ShoppingCart() {
   return (
     <div>
-      <CartCard />
+      <WishList />
     </div>
   );
 }

@@ -4,12 +4,13 @@ export default function ButtonQuantity() {
   const { quantities, setQuantities } = useTheContext();
 
   const quantityPlus = () => {
-    setQuantities(quantities + 1);
-    console.log(quantities);
+    if (quantities >= 0) {
+      setQuantities(quantities + 1);
+    }
   };
 
   const quantityMinus = () => {
-    if (quantities > 0) {
+    if (quantities >= 0) {
       setQuantities(quantities - 1);
     }
   };
@@ -17,6 +18,7 @@ export default function ButtonQuantity() {
   return (
     <div>
       <button onClick={quantityPlus}>Ajouter</button>
+      <button onClick={quantityMinus}>Supprimer</button>
 
       <input
         type="text"
@@ -25,8 +27,6 @@ export default function ButtonQuantity() {
         id="quantity-added-button"
         onChange={(event) => setQuantities(event.target.value)}
       />
-
-      <button onClick={quantityMinus}>Supprimer</button>
     </div>
   );
 }

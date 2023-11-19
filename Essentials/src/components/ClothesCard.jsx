@@ -1,27 +1,25 @@
-import "./ClothesCard.css";
-import { clothesList } from "../data/ClothesData";
-import AddDelButton from "./AddDelButton";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import "../styles/ClothesCard.css";
 
 export default function ClothesCard() {
+  const [data, getData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((res) => getData(res.data));
+  }, []);
+
   return (
-    <div>
-      <div className="clothes-card-container">
-        {clothesList.map((item) => (
-          <div key={item.key}>
-            <h2>{item.name}</h2>
-            <div className="image-clothes-card">
-              <img
-                src={item.image}
-                alt="image of clothe"
-                className="clothes-image"
-              />
-            </div>
-            <p>Quantité en stock :{item.quantity}</p>
-            <p>Prix: {item.price} euros</p>
-            <AddDelButton />
-          </div>
-        ))}
-      </div>
+    <div className="clothes-container">
+      {data.map((ele) => (
+        <div key={ele.id}>
+          <h1>{ele.title}</h1>
+          <img className="clothes-image" src={ele.image} alt={ele.title} />
+          <p>{ele.description}</p>
+        </div>
+      ))}
     </div>
   );
 }
